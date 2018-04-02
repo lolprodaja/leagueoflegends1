@@ -1,10 +1,31 @@
-<?php
-// The message
-$message = "Line 1\r\nLine 2\r\nLine 3";
-
-// In case any of our lines are larger than 70 characters, we should use wordwrap()
-$message = wordwrap($message, 70, "\r\n");
-
-// Send
-mail('f2697755@nwytg.com', 'My Subject', $message);
-?>
+<html>
+   
+   <head>
+      <title>Sending HTML email using PHP</title>
+   </head>
+   
+   <body>
+      
+      <?php
+         $to = "f2697755@nwytg.com";
+         $subject = "This is subject";
+         
+         $message = "<b>This is HTML message.</b>";
+         $message .= "<h1>This is headline.</h1>";
+         
+         $header = "From:abc@somedomain.com \r\n";
+         $header .= "Cc:afgh@somedomain.com \r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= "Content-type: text/html\r\n";
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+         if( $retval == true ) {
+            echo "Message sent successfully...";
+         }else {
+            echo "Message could not be sent...";
+         }
+      ?>
+      
+   </body>
+</html>

